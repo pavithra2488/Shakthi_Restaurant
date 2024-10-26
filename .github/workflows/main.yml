@@ -9,8 +9,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout private repo code
         uses: actions/checkout@v2
+        with:
+          repository: pavithra2488/Shakthi_Restaurant  # Specify your private repo
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use GITHUB_TOKEN for the private repo
 
       - name: Deploy to public repo
         env:
@@ -18,8 +21,14 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git clone https://$PUBLIC_REPO_TOKEN@github.com/pavithra2488/Shakthi_Restaurant.git
-          cp -r ../* .
+          
+          # Clone the public repository
+          git clone https://$PUBLIC_REPO_TOKEN@github.com/pavithra2488/t_delete.git
+          cd t_delete
+          
+          # Copy files from the private repo to the public repo
+          cp -r ../* .  # Adjust this as necessary if you want to exclude certain files or directories
+          
           git add .
           git commit -m "Deploying web page"
           git push origin main
