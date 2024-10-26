@@ -7,7 +7,7 @@ const About = () => {
         <div className="about-container">
             <div className="about-content">
                 <div className="image-section">
-                        <img src="images/restraurant.jpg" alt="About Shakthi Restaurant" />
+                        <img src="images/restaurant.jpg" alt="About Shakthi Restaurant" />
                 </div>
                 <div className="text-section">
                     <h2 className="chinese-heading">Our History</h2>

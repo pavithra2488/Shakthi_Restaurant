@@ -25,7 +25,7 @@ const ContactUs = () => {
         <div className="contact-us-container">
             <div className="map-container">
                 <div>
-                    <h2>Our Location Map</h2> {/* Replace with actual map component or iframe */}
+                    <h2>Our Location Map</h2>
                     <div>
                         <iframe
                             title="Location"
