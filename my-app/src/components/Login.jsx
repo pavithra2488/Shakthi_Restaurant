@@ -19,7 +19,7 @@ const Login = ({ onLogin }) => {
             alert('Login successful!');
             setUsername('');
             setPassword('');
-            navigate('/');
+            navigate('/menu');
         } else {
             setError('Invalid credentials, please try again.');
         }

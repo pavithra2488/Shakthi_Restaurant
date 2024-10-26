@@ -1,14 +1,22 @@
+      /* Header Styles */
 .header {
     display: flex;
     align-items: center; /* Center items vertically */
     justify-content: space-between; /* Space out items */
-    padding: 20px; /* Add some padding */
-    background-color: #f8f9fa; /* Optional: background color */
+    padding: 10px; /* Add some padding */
+    background-color: #ece7c2; /* Optional: background color */
 }
 
+.title {
+    font-style: italic;
+    font-size: 2rem; /* Adjust font size */
+    color: #dc3545; /* Customize color */
+}
+
+    /* Logo Styles */
+
 .logo-container {
-    display: flex;
-  
+    display: flex; 
 }
 
 .logo {
@@ -18,10 +26,9 @@
 }
 
 .main-container {
-   /* padding: 3% 15% 7%; */
-    width: 100%; /* Full width */
+    width: 100%; 
 }
-
+    /* Navigation Styles */
 
 .navbar {
     width: 100%; /* Full width */
@@ -34,10 +41,8 @@
   flex-direction: row; /* Ensure navbar items are in a row */
   width: 100%; /* Full width */
   margin: 0; /* Reset default margin */
-  padding: 0; /* Reset default padding */
-    
-  }
-
+  padding: 0; /* Reset default padding */  
+}
 
 
 .navbar-brand {
@@ -45,7 +50,7 @@
     font-weight: bolder;
 }
  
-/* */
+
 .nav-item {
     padding: 10px 20px;
     text-decoration: none;
@@ -55,7 +60,6 @@
     align-items: center; /* Center items vertically */
     margin-left: 20px; /* Space between nav items */
     font-size: 20px;
- 
 }
 
 .nav-item i {
@@ -66,7 +70,7 @@
     background-color: #228dff;
     color: blue;
 }
-
+      /* CarouselBanner Styles */
 
 .custom-carousel {
     height: auto;
@@ -74,19 +78,12 @@
 }
 
 .custom-carousel img {
-    /*width: 100%; /* Ensure images also take full width */
     height: auto; /* Maintain aspect ratio */
     margin: 20px;
     width: 10%;
 }
 
-.title {
-    font-style: italic;
-    font-size: 2rem; /* Adjust font size */
-    color: #dc3545; /* Customize color */
-
-   
-}
+  /* Footer Styles */
 
 .footer {
     background-color: #726868;
@@ -106,7 +103,6 @@
 }
 
 .footer .icon {
- 
     margin: 0 10px;
     color: #160909;
     font-size: 24px;
@@ -129,6 +125,8 @@
     margin: 10px 0;
 }
 
+  /* AboutUs Style Section */
+
 .about-container {
     background-color: lightblue;
     padding: 5px;
@@ -150,7 +148,7 @@
 .image-section {
     flex: 1; /* Takes up equal space as text section */
     display: flex;
-    justify-content: center; /* Center the image if needed */
+    justify-content: center; 
     align-items: center; /* Center the image vertically */
    
 }
@@ -162,9 +160,9 @@
     object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
-.chinese-heading {
+.heading {
     font-size:32px;
-    color: #c00; /* Example color */
+    color: #c00; 
 }
 
 .border-bottom-line {
@@ -183,42 +181,7 @@ div {
     margin-bottom: 15px; /* Space between form fields */
 }
 
-label {
-    display: block; /* Make label a block element */
-    margin-bottom: 5px; /* Space below the label */
-    font-weight: bold; /* Bold labels for better readability */
-}
-
-input[type="text"],
-input[type="number"],
-input[type="email"],
-textarea {
-    width: 100%; /* Full width */
-    padding: 10px; /* Padding inside the input */
-    border: 1px solid #ccc; /* Border style */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 16px; /* Font size */
-    box-sizing: border-box; /* Include padding in width calculation */
-}
-
-textarea {
-    height: 100px; /* Set a height for the textarea */
-    resize: none; /* Disable resizing */
-}
-
-button {
-    background-color: green; 
-    color: white; /* White text */
-    border: none; /* No border */
-    padding: 10px 20px; /* Padding for the button */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
-}
-
-button:hover {
-    background-color: #89c195; 
-}
+    /* Login Styles */
 
 .login-container {
     max-width: 400px; /* Limit width */
@@ -243,17 +206,20 @@ input {
 }
 
 button {
-    padding: 10px; /* Button padding */
-    background-color: #007bff; /* Primary color */
-    color: white; /* Text color */
+    background-color: green; 
+    color: white; /* White text */
     border: none; /* No border */
-    border-radius: 4px; /* Rounded edges */
-    cursor: pointer; /* Pointer on hover */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #89c195; 
 }
+
+/* Menu Styles */
 
 .menu-container {
     padding: 20px;
@@ -302,6 +268,7 @@ button:hover {
     margin-right: 10px; /* Space between price and button */
     font-weight: bold;
 }
+/* OrderButton Styles */
 
 .order-button {
     background-color: #007bff;
@@ -316,12 +283,16 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* ContactUsContainer Styles */
+
 .contact-us-container {
     display: flex;
     justify-content: space-between;
     padding: 20px;
     height: 100h;
 }
+
+/* Map Styles */
 
 .map-container {
     max-width: 600px;
@@ -344,6 +315,8 @@ button:hover {
     border-radius: 8px; /* Optional rounded corners */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
+
+/* Contactinfo Styles */
 
 .contact-info {
     max-width: 600px; 
@@ -372,6 +345,31 @@ button:hover {
     line-height: 1.5; /* Increase line height for readability */
 }
 
+/* Contactforn Styles */
+
+label {
+    display: block; /* Make label a block element */
+    margin-bottom: 5px; /* Space below the label */
+    font-weight: bold; /* Bold labels for better readability */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+textarea {
+    height: 100px; /* Set a height for the textarea */
+    resize: none; /* Disable resizing */
+}
+
 
 .contact-form {
     max-width: 600px; 
@@ -383,6 +381,22 @@ button:hover {
     background-color: #d9b3d1; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
+
+
+button {
+    padding: 10px; /* Button padding */
+    background-color: #007bff; /* Primary color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded edges */
+    cursor: pointer; /* Pointer on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Cart Styles */
 
 .cart-link {
     position: absolute;

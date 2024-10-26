@@ -22,6 +22,7 @@ const ContactUs = () => {
     };
 
     return (
+        
         <div className="contact-us-container">
             <div className="map-container">
                 <div>

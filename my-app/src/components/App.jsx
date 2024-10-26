@@ -37,66 +37,65 @@ const App = () => {
     };
 
 
-   const addToCart = (item) => {
-    setCartItems((prevItems) => {
-        const existingItemIndex = prevItems.findIndex((prevItem) => prevItem.name === item.name);
-        if (existingItemIndex >= 0) {
+    const addToCart = (item) => {
+        setCartItems((prevItems) => {
+            const existingItemIndex = prevItems.findIndex((prevItem) => prevItem.name === item.name);
+            if (existingItemIndex >= 0) {
+                const newItems = [...prevItems];
+                newItems[existingItemIndex].quantity += 1; // Increment quantity
+                return newItems;
+            } else {
+                return [...prevItems, { ...item, quantity: 1 }];
+            }
+        });
+    };
+
+    const updateCartItemQuantity = (index, quantity) => {
+        setCartItems((prevItems) => {
             const newItems = [...prevItems];
-            newItems[existingItemIndex].quantity += 1; // Increment quantity
+            newItems[index].quantity = quantity;
             return newItems;
-        } else {
-            return [...prevItems, { ...item, quantity: 1 }];
-        }
-    });
-};
+        });
+    };
 
-const updateCartItemQuantity = (index, quantity) => {
-    setCartItems((prevItems) => {
-        const newItems = [...prevItems];
-        newItems[index].quantity = quantity;
-        return newItems;
-    });
-};
+    const removeItem = (index) => {
+        setCartItems((prevItems) => prevItems.filter((_, i) => i !== index));
+    };
 
-const removeItem = (index) => {
-    setCartItems((prevItems) => prevItems.filter((_, i) => i !== index));
-};
+    const clearCart = () => {
+        setCartItems([]);
+        setCartCount(0);
+    };
 
-const clearCart = () => {
-    setCartItems([]);
-    setCartCount(0);
-};
+    return (
+        <Router>
+            <Header />
 
-return (
-    <Router>
-          <Header />
-          
-          <div className="cart-link">
+                <div className="cart-link">
 
-        <li className="nav-item">
-                <Link to="/cart" className="nav-link">
-                    <i className="fas fa-shopping-cart"></i>Cart {(
-                        <span className="badge bg-danger ms-1">{cartItems.length}</span>
-                    )}
-                </Link>
-        </li>
-
-          </div>
-          
-          {/* Optionally, display a logout button in the header */}
-          <div className="d-flex justify-content-end">
-                        <Link to="/">
-                            {user && <button className="btn btn-primary me-4" onClick={handleLogout}>Logout</button>}
+                    <li className="nav-item">
+                        <Link to="/cart" className="nav-link">
+                            <i className="fas fa-shopping-cart"></i>Cart {(
+                                <span className="badge bg-danger ms-1">{cartItems.length}</span>
+                            )}
                         </Link>
-                    </div>
+                    </li>
 
-          <WelcomeMessage user={user} /> {/* Display the welcome message */}
+                </div>
+            
+            {/* Optionally, display a logout button in the header */}
+            <div className="d-flex justify-content-end">
+                    <Link to="/">
+                        {user && <button className="btn btn-primary me-4" onClick={handleLogout}>Logout</button>}
+                    </Link>
+            </div>
 
-          <div className="containerpath mt-4">
-              <Routes>
+            <WelcomeMessage user={user} /> {/* Display the welcome message */}
+
+            <div className="containerpath mt-4">
+                <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/menulist" element={<MenuList/>}/>
-
                     <Route path="/menu" element={user ? <Menu onOrder={addToCart} /> : <Login onLogin={handleLogin} />}/>
                     <Route path="/login" element={<Login onLogin={handleLogin} onLogout={handleLogout}/>} />
                     <Route path="/register" element={<Register onRegister={handleRegister} />} />
@@ -111,11 +110,12 @@ return (
                     <Route path="/user-details" element={
                         <UserDetails clearCart={clearCart} />   
                     } />
-              </Routes>
+                </Routes>
 
-              </div>
-          <Footer />
-    </Router> 
+            </div>
+
+                <Footer />
+        </Router> 
     );
 };
 
