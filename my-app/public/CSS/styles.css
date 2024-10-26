@@ -47,18 +47,15 @@
  
 /* */
 .nav-item {
-    background-color: white;
-    color: #ff5722;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    border: 2px solid #ff5722;
     transition: background-color 0.3s, color 0.3s;
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Center items vertically */
-    
     margin-left: 20px; /* Space between nav items */
-
+    font-size: 20px;
+ 
 }
 
 .nav-item i {
@@ -66,7 +63,7 @@
 }
 
 .nav-item:hover {
-    background-color: #22ff68;
+    background-color: #228dff;
     color: blue;
 }
 
