@@ -24,7 +24,6 @@ jobs:
           
           # Clone the public repository
           git clone https://$PUBLIC_REPO_TOKEN@github.com/pavithra2488/t_delete.git
-          cd t_delete
           
           # Copy files from the private repo to the public repo
           cp -r ../* .  # Adjust this as necessary if you want to exclude certain files or directories
