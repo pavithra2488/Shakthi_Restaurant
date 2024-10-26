@@ -19,7 +19,7 @@ const CarouselBanner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="images/Thali Plate.jpg"
+                        src="images/Keema Briyani.jpg"
                         alt="Second slide"
                     />
                     <Carousel.Caption>
