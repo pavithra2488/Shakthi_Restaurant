@@ -18,7 +18,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git clone git@github.com:pavithra2488/Shakthi_Restaurant.git
+          git clone https://$PUBLIC_REPO_TOKEN@github.com/pavithra2488/t_delete.git
           cp -r * t_delete/
           cd t_delete
           git add .
