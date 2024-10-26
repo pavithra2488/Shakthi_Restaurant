@@ -25,9 +25,13 @@ jobs:
           # Clone the public repository
           git clone https://$PUBLIC_REPO_TOKEN@github.com/pavithra2488/t_delete.git
           
-          # Copy files from the private repo to the public repo
-          cp -r * t_delete/  # Adjust this as necessary if you want to exclude certain files or directories
+          # Navigate into the public repository directory
+          cd t_delete
           
+          # Copy files from the private repo to the public repo
+          cp -r ../* .  # Copy all files from the private repo to the public repo
+
+          # Add changes to the public repo
           git add .
           git commit -m "Deploying web page"
           git push origin main
