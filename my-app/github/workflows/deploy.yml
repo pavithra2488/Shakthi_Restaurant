@@ -1,0 +1,26 @@
+name: Deploy to Public Repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to public repo
+        env:
+          PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git clone https://$PUBLIC_REPO_TOKEN@github.com/pavithra2488/t_delete.git
+          cp -r * your-public-repo/
+          cd your-public-repo
+          git add .
+          git commit -m "Deploying web page"
+          git push origin main
